@@ -2569,5 +2569,86 @@
     <script src="js/listeners.js"></script>
     <script src="js/listeners-voice.js"></script>
     <script src="js/app.js"></script>
-</body>
+        
+        <!-- ============================================================
+     情侣空间 Modal
+     ============================================================ -->
+<div class="modal" id="couple-space-modal">
+    <div class="modal-content">
+        <!-- 头部 -->
+        <div class="cs-header">
+            <div class="cs-header-top">
+                <div class="cs-header-title">
+                    <i class="fas fa-heart"></i>
+                    <span>情侣空间</span>
+                </div>
+                <button onclick="hideModal(document.getElementById('couple-space-modal'))" style="background:none;border:none;font-size:18px;color:var(--text-secondary);cursor:pointer;padding:4px 8px;">✕</button>
+            </div>
+            <div class="cs-header-sub" id="cs-partner-name-display">与 梦角 的空间</div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="cs-tabs" id="cs-tabs">
+            <button class="cs-tab active" data-panel="cs-feed"><i class="fas fa-rss"></i> 动态</button>
+            <button class="cs-tab" data-panel="cs-letters"><i class="fas fa-envelope"></i> 情书</button>
+            <button class="cs-tab" data-panel="cs-whisper"><i class="fas fa-comment-dots"></i> 悄悄话</button>
+            <button class="cs-tab" data-panel="cs-bills"><i class="fas fa-coins"></i> 记账</button>
+            <button class="cs-tab" data-panel="cs-diary"><i class="fas fa-book"></i> 日记</button>
+            <button class="cs-tab" data-panel="cs-gifts"><i class="fas fa-gift"></i> 礼物</button>
+        </div>
+
+        <!-- Body -->
+        <div class="cs-body" id="cs-body">
+            <!-- 动态面板 -->
+            <div id="cs-feed" class="cs-panel"></div>
+
+            <!-- 情书面板 -->
+            <div id="cs-letters" class="cs-panel" style="display:none;"></div>
+
+            <!-- 悄悄话面板 -->
+            <div id="cs-whisper" class="cs-panel" style="display:none;"></div>
+
+            <!-- 记账面板 -->
+            <div id="cs-bills" class="cs-panel" style="display:none;"></div>
+
+            <!-- 日记面板 -->
+            <div id="cs-diary" class="cs-panel" style="display:none;"></div>
+
+            <!-- 礼物面板 -->
+            <div id="cs-gifts" class="cs-panel" style="display:none;"></div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================
+     经期提醒设置 Modal
+     ============================================================ -->
+<div class="modal" id="period-reminder-modal">
+    <div class="modal-content" style="max-width: 360px;">
+        <div class="modal-title">
+            <i class="fas fa-calendar-heart"></i><span>经期提醒设置</span>
+        </div>
+        <div style="padding: 4px 0 12px;">
+            <div style="font-size: 13px; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.6;">
+                选择两个日期作为提醒日，每月这两天会收到角色的关心提醒。
+            </div>
+            <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 12px;">
+                <label style="font-size: 13px; font-weight: 500;">日期 1</label>
+                <input type="number" id="period-day1" min="1" max="31" placeholder="日" style="width: 60px; padding: 8px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--primary-bg); color: var(--text-primary); font-size: 14px; text-align: center;">
+                <span style="color: var(--text-secondary);">号</span>
+            </div>
+            <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 16px;">
+                <label style="font-size: 13px; font-weight: 500;">日期 2</label>
+                <input type="number" id="period-day2" min="1" max="31" placeholder="日" style="width: 60px; padding: 8px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--primary-bg); color: var(--text-primary); font-size: 14px; text-align: center;">
+                <span style="color: var(--text-secondary);">号</span>
+            </div>
+            <div id="period-status" style="font-size: 12px; color: var(--text-secondary); padding: 8px 12px; background: var(--primary-bg); border-radius: 8px; margin-bottom: 12px;"></div>
+        </div>
+        <div class="modal-buttons">
+            <button class="modal-btn modal-btn-secondary" onclick="hideModal(document.getElementById('period-reminder-modal'))">取消</button>
+            <button class="modal-btn modal-btn-primary" id="save-period-btn">保存提醒</button>
+        </div>
+    </div>
+</div>
+</body><script src="js/features/couple-space.js"></script>
 </html>
